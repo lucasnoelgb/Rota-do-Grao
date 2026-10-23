@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rota do Grão — Gestão Financeira &amp; Análise de Custos</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Oswald & Open Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Oswald:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#3a3330",
+            "surface-bright": "#3f3834",
+            "tertiary-container": "#a38d73",
+            "outline-variant": "#554339",
+            "surface-dim": "#17120f",
+            "on-tertiary-fixed-variant": "#55442e",
+            "surface-container-high": "#2f2925",
+            "inverse-on-surface": "#362f2b",
+            "tertiary": "#dbc3a6",
+            "surface-container": "#241e1b",
+            "outline": "#a38c80",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed-dim": "#e1c19f",
+            "primary-fixed": "#ffdbc8",
+            "surface-container-low": "#201a17",
+            "surface-variant": "#3a3330",
+            "on-primary-fixed-variant": "#743500",
+            "background": "#17120f",
+            "on-primary-fixed": "#321300",
+            "inverse-primary": "#974802",
+            "primary-container": "#d67836",
+            "inverse-surface": "#ece0da",
+            "on-primary": "#512300",
+            "primary-fixed-dim": "#ffb689",
+            "on-tertiary-fixed": "#261907",
+            "secondary-container": "#594329",
+            "on-tertiary-container": "#352713",
+            "surface-tint": "#ffb689",
+            "on-tertiary": "#3d2e19",
+            "on-surface-variant": "#dbc1b4",
+            "on-secondary-fixed": "#291803",
+            "error": "#ffb4ab",
+            "secondary": "#e1c19f",
+            "on-surface": "#ece0da",
+            "tertiary-fixed-dim": "#dbc3a6",
+            "tertiary-fixed": "#f8dfc0",
+            "on-error": "#690005",
+            "surface-container-lowest": "#120d0a",
+            "error-container": "#93000a",
+            "on-secondary-container": "#ceb08f",
+            "surface": "#17120f",
+            "on-secondary": "#402d15",
+            "primary": "#ffb689",
+            "on-primary-container": "#471e00",
+            "on-secondary-fixed-variant": "#594329",
+            "secondary-fixed": "#feddba",
+            "on-background": "#ece0da"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "2rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "badge-label": ["Open Sans"],
+            "headline-lg": ["Oswald"],
+            "display-lg-mobile": ["Oswald"],
+            "metric-numeral-sm": ["Oswald"],
+            "display-lg": ["Oswald"],
+            "label-caps": ["Open Sans"],
+            "body-sm": ["Open Sans"],
+            "body-md": ["Open Sans"],
+            "headline-sm": ["Oswald"],
+            "metric-numeral-lg": ["Oswald"],
+            "display-md": ["Oswald"],
+            "data-table-cell": ["Open Sans"],
+            "display-md-mobile": ["Oswald"],
+            "body-lg": ["Open Sans"]
+          },
+          "fontSize": {
+            "badge-label": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "metric-numeral-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "metric-numeral-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-md": ["40px", { "lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "data-table-cell": ["13px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display-md-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background min-h-screen relative antialiased selection:bg-primary-container selection:text-surface-container-lowest font-body-md text-body-md overflow-x-hidden">
+<!-- Background Photographic Layer with Warm Atmospheric Obsidian Overlay -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+<img alt="Coffee texture background" class="w-full h-full object-cover object-center filter brightness-[0.4] contrast-125 scale-105 transform motion-safe:transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPjIWJ1uzQ2H4BG8nr6ItzzXBvpK3KGS10njgAVdI4CidY8dIZeBFWH0D7FO-t4qwts7ISSuo7J6WvwlJqLdqVR8zDY3q1fJouecY2W2Qj13i6KcX5qJYF4sNmQrst6lxWxiR5asaslf5zQKdjvu5KPQPxB6zyo_s6UGp1TiR6xtr_0vASl317kvZUSsPdpYlu6BPjdTyvSp_LLdDi2_pe1s7UXGYEiZGkewRBzl2s1mJgZufdRMZzdA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#120d0a]/90 via-[#17120f]/93 to-[#120d0a]/98 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,120,54,0.12),transparent_55%)]"></div>
+</div>
+<div class="relative z-10 flex flex-col min-h-screen">
+<!-- TOP APP BAR (Shared Components JSON execution) -->
+<header class="bg-surface-container-lowest/85 backdrop-blur-md dark:bg-surface-container-lowest/85 docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-sm">
+<div class="w-full px-margin flex items-center justify-between h-20 max-w-7xl mx-auto">
+<!-- Brand Identification -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">coffee</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm tracking-wide text-secondary dark:text-secondary uppercase">Rota do Grão</span>
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest text-[9px]">Safra 2025/2026 Ativa • BRL (R$)</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-150 font-label-caps text-label-caps tracking-wider uppercase" href="#">Início</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-caps text-label-caps tracking-wider uppercase" href="#">Análise de Custos</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-150 font-label-caps text-label-caps tracking-wider uppercase" href="#">Comparativo por Período</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-150 font-label-caps text-label-caps tracking-wider uppercase" href="#">Relatórios</a>
+</nav>
+<!-- Trailing Actions Cluster -->
+<div class="flex items-center gap-4">
+<div class="flex items-center space-x-2 border-r border-outline-variant/40 pr-4">
+<button class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors duration-200 hover:bg-surface-container/60 relative" title="Notificações de Mercado">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary-container rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors duration-200 hover:bg-surface-container/60" title="Configuração e Filtros">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Secondary Outlined Pill CTA -->
+<button class="transition-all duration-200 active:scale-95 px-5 py-2 rounded-full border border-primary-container/80 text-secondary bg-primary-container/10 hover:bg-primary-container/20 font-badge-label text-badge-label uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">add</span>
+<span>Novo Lote</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN DASHBOARD CONTENT CANVAS -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-margin py-8 space-y-8">
+<!-- HERO HEADER WITH SENSORY INTEL METRICS -->
+<section class="space-y-4">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2 border-b border-outline-variant/20">
+<div class="space-y-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high/80 border border-outline-variant/40">
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Inteligência Financeira Cafeeira</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:text-display-md text-secondary tracking-wide">
+              Gestão Financeira &amp; Análise de Custos da Rota
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+              Monitore oscilações de insumos, compare safras e períodos operacionais com inteligência analítica cafeeira de alta fidelidade.
+            </p>
+</div>
+<!-- Live Feed Ticker Badges -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 border border-outline-variant/30 flex items-center gap-2 backdrop-blur-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Arábica NY (KC):</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm text-secondary">US$ 242.80</span>
+<span class="text-primary-container text-xs font-bold font-badge-label">▲ +1.4%</span>
+</div>
+<div class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 border border-outline-variant/30 flex items-center gap-2 backdrop-blur-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Saca 60kg Mogiana:</span>
+<span class="font-metric-numeral-sm text-metric-numeral-sm text-secondary">R$ 1.340</span>
+<span class="text-secondary text-xs font-bold font-badge-label">▼ -0.5%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE COST SETUP FORM (Bento Block) -->
+<section class="p-6 md:p-8 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/30 shadow-xl relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-56 h-56 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-5 mb-6 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-secondary">Configuração de Parâmetros de Custo</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calibre as variáveis operacionais para recalcular as projeções de margem em tempo real.</p>
+</div>
+</div>
+<span class="hidden sm:inline-block font-label-caps text-label-caps uppercase text-on-surface-variant border border-outline-variant/40 px-2.5 py-1 rounded">Modo Heurístico</span>
+</div>
+<form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 items-end">
+<!-- Field 1: Period Selector -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">
+              Período Comparativo
+            </label>
+<div class="relative">
+<select class="w-full bg-surface-container-high/90 border border-outline-variant/40 rounded-xl px-3.5 py-2.5 text-secondary font-body-md text-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all appearance-none cursor-pointer">
+<option selected="">Período A vs Período B</option>
+<option>Mês Anterior vs Mês Atual</option>
+<option>Safra 2024 vs Safra 2025</option>
+<option>Personalizado (Auditado)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Field 2: Insumo / Origem -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">
+              Tipo de Insumo / Origem
+            </label>
+<div class="relative">
+<select class="w-full bg-surface-container-high/90 border border-outline-variant/40 rounded-xl px-3.5 py-2.5 text-secondary font-body-md text-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all appearance-none cursor-pointer">
+<option selected="">Grãos Especiais (84+ SCA)</option>
+<option>Embalagens Kraft c/ Válvula</option>
+<option>Torra &amp; Processamento Artesanal</option>
+<option>Logística &amp; Frete Expresso</option>
+<option>Operação Geral / Cupping</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-on-surface-variant text-[18px]">coffee</span>
+</div>
+</div>
+<!-- Field 3: Custo Médio por KG -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">
+              Custo Médio por KG
+            </label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="text-on-surface-variant font-label-caps text-label-caps">R$</span>
+</div>
+<input class="w-full bg-surface-container-high/90 border border-outline-variant/40 rounded-xl pl-10 pr-3.5 py-2.5 text-secondary font-metric-numeral-sm text-metric-numeral-sm focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all tracking-wider" type="text" value="78,50"/>
+</div>
+</div>
+<!-- Field 4: Volume com Stepper -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">
+              Volume Adquirido (KG)
+            </label>
+<div class="flex items-center rounded-xl border border-outline-variant/40 bg-surface-container-high/90 overflow-hidden">
+<button class="w-10 h-11 flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input class="w-full bg-transparent border-0 text-center text-secondary font-metric-numeral-sm text-metric-numeral-sm focus:ring-0 py-2" type="text" value="180"/>
+<button class="w-10 h-11 flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Field 5: Moeda & CTA -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">
+              Cotação Base
+            </label>
+<div class="flex items-center gap-1.5 p-1 rounded-xl bg-surface-container-high/90 border border-outline-variant/40 mb-1">
+<button class="flex-1 py-1 text-center rounded-lg bg-secondary text-surface-container-lowest font-badge-label text-badge-label" type="button">BRL</button>
+<button class="flex-1 py-1 text-center rounded-lg text-on-surface-variant hover:text-secondary font-badge-label text-badge-label" type="button">USD</button>
+<button class="flex-1 py-1 text-center rounded-lg text-on-surface-variant hover:text-secondary font-badge-label text-badge-label" type="button">EUR</button>
+</div>
+<button class="w-full py-2.5 px-4 rounded-xl bg-primary-container hover:bg-[#c46520] active:scale-[0.98] transition-all duration-200 text-surface-container-lowest font-headline-sm text-headline-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>Simular</span>
+</button>
+</div>
+</form>
+</section>
+<!-- PERIOD-OVER-PERIOD DASHBOARD SECTION -->
+<section class="space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-secondary">
+              Painel Comparativo de Custos &amp; Eficiência Operacional
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Benchmark direto entre Período A (Safra Passada) e Período B (Safra em Curso).</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant mr-1">Legenda:</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant/30 text-on-surface-variant font-badge-label text-badge-label">
+<span class="w-2.5 h-2.5 rounded-full bg-[#C4AD91]"></span> Período A
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant/30 text-secondary font-badge-label text-badge-label">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> Período B (Ativo)
+            </span>
+</div>
+</div>
+<!-- 3 KPI METRIC CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Card 1: Custo Total -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-md border border-outline-variant/30 hover:border-outline-variant/60 transition-all duration-300 relative group">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Custo Total Consolidado</span>
+<span class="material-symbols-outlined text-[20px] text-primary">payments</span>
+</div>
+<div class="flex items-baseline gap-3 my-2">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-secondary tracking-tight">R$ 14.250,00</span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/20">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/15 text-primary-container border border-primary-container/30 font-badge-label text-badge-label">
+<span class="material-symbols-outlined text-[13px]">trending_down</span>
+                -8.3% vs Período A
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Economia: <strong class="text-secondary font-bold">R$ 1.280,00</strong></span>
+</div>
+</div>
+<!-- Card 2: Custo Médio por KG -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-md border border-outline-variant/30 hover:border-outline-variant/60 transition-all duration-300 relative group">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Custo Médio por KG / Unidade</span>
+<span class="material-symbols-outlined text-[20px] text-primary">scale</span>
+</div>
+<div class="flex items-baseline gap-3 my-2">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-secondary tracking-tight">R$ 48,50 <span class="font-headline-sm text-headline-sm text-on-surface-variant font-normal">/ kg</span></span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/20">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-secondary-fixed-dim border border-outline-variant/40 font-badge-label text-badge-label">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>
+                +2.1% ponderado
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rendimento: <strong class="text-secondary font-bold">55 doses/kg</strong></span>
+</div>
+</div>
+<!-- Card 3: Eficiência Operacional -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-md border border-outline-variant/30 hover:border-outline-variant/60 transition-all duration-300 relative group">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Eficiência Operacional / Margem</span>
+<span class="material-symbols-outlined text-[20px] text-primary">pie_chart</span>
+</div>
+<div class="flex items-baseline gap-3 my-2">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-secondary tracking-tight">94.8%</span>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/20">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/15 text-primary-container border border-primary-container/30 font-badge-label text-badge-label">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                +3.5% otimização
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Desperdício residual: <strong class="text-secondary font-bold">5.2%</strong></span>
+</div>
+</div>
+</div>
+<!-- CHARTS SECTION: COMPARATIVE BARS & MONTHLY EVOLUTION -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Interactive Grouped Bar Chart (8 cols) -->
+<div class="lg:col-span-7 p-6 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-md border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-secondary">Comparativo de Custos por Categoria</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Variação nominal entre os centros de custo da torrefação</p>
+</div>
+<!-- Dynamic Pill delta callout -->
+<div class="bg-secondary text-surface-container-lowest font-badge-label text-badge-label px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">insights</span>
+<span>-R$ 1.150 em grãos</span>
+</div>
+</div>
+<!-- CSS / SVG Bar Chart Representation -->
+<div class="space-y-6 pt-4">
+<!-- Category 1: Grãos Especiais -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-label-caps text-label-caps text-secondary">Grãos Especiais (SCA 84+)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">A: R$ 8.900 | <strong class="text-primary-container font-bold">B: R$ 7.750 (-12.9%)</strong></span>
+</div>
+<div class="h-6 w-full bg-surface-container-high/50 rounded-lg p-0.5 flex gap-1">
+<!-- Period A Bar -->
+<div class="h-full bg-[#C4AD91]/40 rounded transition-all duration-500 hover:bg-[#C4AD91]/70" style="width: 85%;" title="Período A: R$ 8.900"></div>
+<!-- Period B Bar -->
+<div class="h-full bg-primary-container rounded transition-all duration-500 hover:bg-primary" style="width: 74%;" title="Período B: R$ 7.750"></div>
+</div>
+</div>
+<!-- Category 2: Logística & Frete -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-label-caps text-label-caps text-secondary">Logística &amp; Frete Expresso</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">A: R$ 1.850 | <strong class="text-secondary font-bold">B: R$ 2.300 (+24.3%)</strong></span>
+</div>
+<div class="h-6 w-full bg-surface-container-high/50 rounded-lg p-0.5 flex gap-1">
+<div class="h-full bg-[#C4AD91]/40 rounded transition-all duration-500 hover:bg-[#C4AD91]/70" style="width: 25%;" title="Período A: R$ 1.850"></div>
+<div class="h-full bg-primary-container rounded transition-all duration-500 hover:bg-primary" style="width: 32%;" title="Período B: R$ 2.300"></div>
+</div>
+</div>
+<!-- Category 3: Embalagens Kraft -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-label-caps text-label-caps text-secondary">Embalagens Kraft c/ Desgaseificação</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">A: R$ 2.100 | <strong class="text-primary-container font-bold">B: R$ 1.950 (-7.1%)</strong></span>
+</div>
+<div class="h-6 w-full bg-surface-container-high/50 rounded-lg p-0.5 flex gap-1">
+<div class="h-full bg-[#C4AD91]/40 rounded transition-all duration-500 hover:bg-[#C4AD91]/70" style="width: 30%;" title="Período A: R$ 2.100"></div>
+<div class="h-full bg-primary-container rounded transition-all duration-500 hover:bg-primary" style="width: 27%;" title="Período B: R$ 1.950"></div>
+</div>
+</div>
+<!-- Category 4: Torrefação Artesanal -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-label-caps text-label-caps text-secondary">Torrefação Artesanal &amp; Cupping</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">A: R$ 2.680 | <strong class="text-primary-container font-bold">B: R$ 2.250 (-16.0%)</strong></span>
+</div>
+<div class="h-6 w-full bg-surface-container-high/50 rounded-lg p-0.5 flex gap-1">
+<div class="h-full bg-[#C4AD91]/40 rounded transition-all duration-500 hover:bg-[#C4AD91]/70" style="width: 38%;" title="Período A: R$ 2.680"></div>
+<div class="h-full bg-primary-container rounded transition-all duration-500 hover:bg-primary" style="width: 31%;" title="Período B: R$ 2.250"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chart Footnote -->
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+                Valores computados em base D+15 pós-fechamento
+              </span>
+<button class="hover:text-primary transition-colors text-xs font-bold font-badge-label uppercase">Exportar Vetor</button>
+</div>
+</div>
+<!-- Monthly Disbursement Line/Area Chart & Context (5 cols) -->
+<div class="lg:col-span-5 p-6 rounded-2xl bg-surface-container-lowest/85 backdrop-blur-md border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-secondary">Evolução Mensal de Desembolso</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Curva anual de capital alocado</p>
+</div>
+<div class="flex items-center rounded-lg bg-surface-container p-0.5 border border-outline-variant/30 text-xs">
+<button class="px-2.5 py-1 rounded bg-secondary text-surface-container-lowest font-bold">2026</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-secondary">2025</button>
+</div>
+</div>
+<!-- Curva SVG com Gradiente Caramelo -->
+<div class="relative mt-4 h-48 w-full flex items-end">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 400 160">
+<defs>
+<lineargradient id="coffeeGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#C86D2B" stop-opacity="0.45"></stop>
+<stop offset="100%" stop-color="#C86D2B" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#554339" stroke-dasharray="3,3" stroke-width="0.5" x1="0" x2="400" y1="40" y2="40"></line>
+<line stroke="#554339" stroke-dasharray="3,3" stroke-width="0.5" x1="0" x2="400" y1="80" y2="80"></line>
+<line stroke="#554339" stroke-dasharray="3,3" stroke-width="0.5" x1="0" x2="400" y1="120" y2="120"></line>
+<!-- Historical Line (Period A - Safra 2025) -->
+<path d="M 10 110 Q 70 95, 130 105 T 260 70 T 390 85" fill="none" opacity="0.6" stroke="#C4AD91" stroke-dasharray="4,4" stroke-width="1.5"></path>
+<!-- Current Area (Period B - Safra 2026) -->
+<path d="M 10 130 Q 70 120, 130 90 T 260 35 T 390 60 L 390 160 L 10 160 Z" fill="url(#coffeeGradient)"></path>
+<path d="M 10 130 Q 70 120, 130 90 T 260 35 T 390 60" fill="none" stroke="#d67836" stroke-width="2.5"></path>
+<!-- Peak Callout Point (Outubro - Colheita tardia) -->
+<circle cx="260" cy="35" fill="#ffb689" r="4.5" stroke="#120d0a" stroke-width="2"></circle>
+</svg>
+<!-- Floating Peak Callout Tag -->
+<div class="absolute top-2 right-20 bg-secondary text-surface-container-lowest font-badge-label text-badge-label px-2.5 py-1 rounded shadow-lg border border-outline-variant">
+                  Outubro: R$ 18.400 (Pico Colheita)
+                </div>
+</div>
+<!-- Month Ticker Axis -->
+<div class="flex justify-between text-[11px] font-label-caps text-on-surface-variant pt-3 border-t border-outline-variant/20">
+<span>Jan</span>
+<span>Mar</span>
+<span>Mai</span>
+<span>Jul</span>
+<span class="text-primary font-bold">Out</span>
+<span>Dez</span>
+</div>
+</div>
+<!-- Secondary Insight Strip -->
+<div class="mt-4 p-3 rounded-xl bg-surface-container/60 border border-outline-variant/30 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">water_drop</span>
+<p class="text-xs text-on-surface-variant">
+                Previsão de estiagem amenizada no Sul de Minas: cotação futura estabilizada com -4.2% de risco de quebra de safra.
+              </p>
+</div>
+</div>
+</div>
+<!-- AI EXECUTIVE SUMMARY CARD (Strategic Variation Insight) -->
+<div class="p-5 md:p-6 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/30 border-l-4 border-l-[#B45F24] shadow-lg relative">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary-container/20 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-secondary">Insight Estratégico de Variação</h4>
+<span class="px-2 py-0.5 rounded bg-primary-container text-surface-container-lowest font-badge-label text-badge-label uppercase">Alta Relevância</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                O custo consolidado de grãos especiais retraiu <span class="text-secondary font-bold">12.9% no Período B</span> graças à aquisição direta de lotes no Cerrado Mineiro sem intermediação corretora. Esse ganho compensou integralmente a pressão altista de <span class="text-primary-container font-bold">+24.3% na logística rodoviária</span> gerada pelos reajustes de combustíveis do trimestre. Recomenda-se manter o hedge físico para as remessas do 4º trimestre.
+              </p>
+</div>
+</div>
+</div>
+<!-- DETAILED FINANCIAL COMPARISON TABLE -->
+<div class="rounded-2xl bg-surface-container-lowest/85 backdrop-blur-md border border-outline-variant/30 overflow-hidden shadow-lg">
+<!-- Table Header Controls & Filter Chips -->
+<div class="p-6 border-b border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-secondary">Detalhamento de Custos por Período</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Demonstrativo auditado por centro de alocação de grãos e beneficiamento</p>
+</div>
+<!-- Chips de Filtro Exatos -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-full bg-secondary text-surface-container-lowest font-badge-label text-badge-label uppercase tracking-wide">
+                Todos os Itens (5)
+              </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high/60 border border-outline-variant/40 text-on-surface-variant hover:text-secondary font-badge-label text-badge-label uppercase tracking-wide transition-colors">
+                Matéria-Prima
+              </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high/60 border border-outline-variant/40 text-on-surface-variant hover:text-secondary font-badge-label text-badge-label uppercase tracking-wide transition-colors">
+                Serviços
+              </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high/60 border border-outline-variant/40 text-on-surface-variant hover:text-secondary font-badge-label text-badge-label uppercase tracking-wide transition-colors">
+                Frete
+              </button>
+</div>
+</div>
+<!-- Kinetic Scroll Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/20 bg-surface-container-high/40">
+<th class="py-3.5 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Item / Categoria</th>
+<th class="py-3.5 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider text-right">Período A (Base)</th>
+<th class="py-3.5 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider text-right">Período B (Comparativo)</th>
+<th class="py-3.5 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider text-right">Variação Absoluta (R$)</th>
+<th class="py-3.5 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider text-right">Variação (%)</th>
+<th class="py-3.5 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15 text-sm font-data-table-cell">
+<!-- Row 1 -->
+<tr class="hover:bg-primary-container/[0.04] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[15px]">grain</span>
+</div>
+<div>
+<span class="font-bold text-secondary block">Microlote Alta Mogiana</span>
+<span class="text-xs text-on-surface-variant">Catuaí Amarelo • CD 86pts SCA</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-on-surface-variant">R$ 5.200,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-secondary">R$ 4.450,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-primary-container font-semibold">- R$ 750,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-primary-container font-semibold">-14.4%</td>
+<td class="py-4 px-6 text-center">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/15 text-primary-container border border-primary-container/30 font-badge-label text-badge-label uppercase">
+                      Otimizado
+                    </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-primary-container/[0.04] transition-colors bg-surface-container-high/20">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[15px]">grain</span>
+</div>
+<div>
+<span class="font-bold text-secondary block">Cerrado Catuaí 84+</span>
+<span class="text-xs text-on-surface-variant">Processo Natural • Lote Padrão</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-on-surface-variant">R$ 3.700,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-secondary">R$ 3.300,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-primary-container font-semibold">- R$ 400,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-primary-container font-semibold">-10.8%</td>
+<td class="py-4 px-6 text-center">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/15 text-primary-container border border-primary-container/30 font-badge-label text-badge-label uppercase">
+                      Otimizado
+                    </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-primary-container/[0.04] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[15px]">inventory_2</span>
+</div>
+<div>
+<span class="font-bold text-secondary block">Embalagens Kraft 250g / 1kg</span>
+<span class="text-xs text-on-surface-variant">Válvula desgaseificadora + zip</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-on-surface-variant">R$ 2.100,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-secondary">R$ 1.950,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-primary-container font-semibold">- R$ 150,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-primary-container font-semibold">-7.1%</td>
+<td class="py-4 px-6 text-center">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/40 font-badge-label text-badge-label uppercase">
+                      Estável
+                    </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-primary-container/[0.04] transition-colors bg-surface-container-high/20">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[15px]">local_shipping</span>
+</div>
+<div>
+<span class="font-bold text-secondary block">Frete SCA Dedicado</span>
+<span class="text-xs text-on-surface-variant">Transporte climatizado fazenda-torrefação</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-on-surface-variant">R$ 1.850,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-secondary">R$ 2.300,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-secondary-fixed-dim font-semibold">+ R$ 450,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-secondary-fixed-dim font-semibold">+24.3%</td>
+<td class="py-4 px-6 text-center">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container/50 text-secondary border border-outline-variant/40 font-badge-label text-badge-label uppercase">
+                      Alerta
+                    </span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-primary-container/[0.04] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[15px]">local_fire_department</span>
+</div>
+<div>
+<span class="font-bold text-secondary block">Serviço de Torra Perfil Artesanal</span>
+<span class="text-xs text-on-surface-variant">Atelier Probat 12kg • Gás GLP</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-on-surface-variant">R$ 2.680,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-secondary">R$ 2.250,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-primary-container font-semibold">- R$ 430,00</td>
+<td class="py-4 px-6 text-right font-metric-numeral-sm text-metric-numeral-sm text-primary-container font-semibold">-16.0%</td>
+<td class="py-4 px-6 text-center">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/15 text-primary-container border border-primary-container/30 font-badge-label text-badge-label uppercase">
+                      Otimizado
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Bottom Bar -->
+<div class="p-4 bg-surface-container-high/30 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant font-label-caps">
+<span>Exibindo 5 de 5 registros homologados para a Safra 2025/2026</span>
+<div class="flex items-center gap-4">
+<button class="hover:text-secondary flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span> Exportar Planilha (.CSV)
+              </button>
+<button class="hover:text-secondary flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">print</span> Relatório Executivo (.PDF)
+              </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Components JSON execution) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest docked full-width bottom-0 border-t border-outline-variant/20 dark:border-outline-variant/20 flat no shadows mt-16">
+<div class="w-full px-margin py-space-xl flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="text-headline-sm font-headline-sm text-secondary dark:text-secondary uppercase tracking-wider">
+            Rota do Grão
+          </span>
+<p class="text-on-surface-variant dark:text-on-surface-variant text-body-sm font-body-sm text-center md:text-left">
+            © 2025 Rota do Grão. Inteligência Financeira e Sensorial Cafeeira. Todos os direitos reservados.
+          </p>
+</div>
+<!-- Links from Shared Components JSON -->
+<nav class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant text-body-sm font-body-sm hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">
+            Termos de Hedge
+          </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-body-sm font-body-sm hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">
+            Políticas de Auditoria
+          </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-body-sm font-body-sm hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">
+            Cotações da Safra
+          </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant text-body-sm font-body-sm hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">
+            Suporte Institucional
+          </a>
+</nav>
+</div>
+</footer>
+</div>
+</body></html>
